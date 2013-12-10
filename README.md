@@ -1,4 +1,3 @@
-FRC-14
-======
+# <i>FIRST</i> Team 422's 2014 Robot Code
 
-FIRST Team 422's FIRST Robotics Challenge Robot Code for 2014
+This repository contains FIRST Team 422's code for the 2014 season of the FIRST Robotics Challenge. This code is released under the MIT License. The text of this license is available in [LICENSE.txt](LICENSE.txt).
