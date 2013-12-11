@@ -22,7 +22,7 @@ to be named after the file they represent, e.g. a file named
 
 Trailing comments, like the one in the example above, are recommended.
 
-### "using namespace" Statements
+### `using namespace` Statements
 Statements beginning with `using namespace` should never be used in header
 files, as they pollute the global namespace. Instead, names should be referenced
 by their full name, e.g. `std::vector`.
@@ -145,7 +145,7 @@ other user-defined types.
 
 ### Variable Names
 Variable names are in lower\_case. Additionally, boolean variables should imply
-their type by beginning with "is", such as `is_robot_moving`.
+their type by beginning with "is" or "are", such as `is_robot_moving`.
 
 ### Constant Names
 Constants should be named in UPPER\_CASE.
