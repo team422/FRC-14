@@ -1,10 +1,3 @@
-# Visual Studio files
-*.sln
-*.sdf
-*.vcxproj
-*.filters
-*.opensdf
-
 # Binaries
 /bin/*
 
@@ -21,3 +14,10 @@
 *.lai
 *.la
 *.a
+
+# Visual Studio files
+*.sln
+*.sdf
+*.vcxproj
+*.filters
+*.opensdf
