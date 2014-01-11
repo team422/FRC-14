@@ -4,7 +4,7 @@
 #include "drive_base.hpp"
 
 namespace Subsystems {
-	Drive_Base * const drive_base = new Drive_Base();
+	extern Drive_Base * drive_base;
 }
 
 #endif // SUBSYSTEMS_HPP

@@ -1,17 +1,24 @@
 #include "drive_base.hpp"
 #include "../commands/tank_drive.hpp"
 #include "../port_mapping.hpp"
+#include <iostream>
+#include <WPILib.h>
 
 Drive_Base::Drive_Base() :
 	Subsystem("Drive_Base"),
 	left_motor( new Talon(Ports::Digital_Channels::LEFT_DRIVE_MOTOR) ),
-	right_motor( new Talon(Ports::Digital_Channels::RIGHT_DRIVE_MOTOR) ) {}
+	right_motor(new Talon(Ports::Digital_Channels::RIGHT_DRIVE_MOTOR)) {
+	cerr << "I initialized the Talons!";
+}
 
 void Drive_Base::InitDefaultCommand() {
+	cerr << "I went into the DefaultCommand!";
 	SetDefaultCommand( new Tank_Drive() );
 }
 
 void Drive_Base::set_motors_normalized(float left_speed, float right_speed) {
 	left_motor->Set(left_speed);
 	right_motor->Set(right_speed);
+	cerr << "I set the motors!";
 }
+

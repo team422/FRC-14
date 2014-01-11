@@ -5,6 +5,7 @@
 
 class Robot : public IterativeRobot {
 private:
+	void RobotInit();
 	void TeleopPeriodic();
 };
 
