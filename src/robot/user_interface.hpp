@@ -8,5 +8,8 @@ namespace UI {
 		extern Joystick * left_joystick;
 		extern Joystick * right_joystick;
 	}
+	namespace Secondary_Driver{
+		extern Joystick * joystick;
+	}
 }
 #endif
