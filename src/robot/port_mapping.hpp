@@ -12,7 +12,8 @@
 namespace Ports {
 	namespace Digital_Channels {
 		const uint32_t LEFT_DRIVE_MOTOR  = 1,
-		               RIGHT_DRIVE_MOTOR = 2;
+		               RIGHT_DRIVE_MOTOR = 2,
+		               GENERIC_MOTOR = 3;
 	}
 }
 
