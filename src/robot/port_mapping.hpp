@@ -3,10 +3,10 @@
 
 #include <WPILib.h>
 
-#ifdef RELEASE
-#define UNKNOWN @port_not_assigned
-#else
+#ifdef DEBUG
 #define UNKNOWN 0
+#else
+#define UNKNOWN @port_not_assigned
 #endif
 
 namespace Ports {

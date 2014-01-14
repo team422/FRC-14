@@ -1,5 +1,6 @@
 # Binaries
 /bin/*
+/build/*
 
 # Compiled Object files
 *.slo
