@@ -8,7 +8,7 @@ Tank_Drive::Tank_Drive() {
 }
 
 void Tank_Drive::Execute() {
-	float left  = UI::Primary_Driver::left_joystick->GetY();
+	float left = UI::Primary_Driver::left_joystick->GetY();
 	float right = UI::Primary_Driver::right_joystick->GetY();
 	Subsystems::drive_base->set_motors_normalized(left, right);
 }

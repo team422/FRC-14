@@ -6,7 +6,7 @@
 Drive_Base::Drive_Base() :
 	Subsystem("Drive_Base"),
 	left_motor( new Talon(Ports::Digital_Channels::LEFT_DRIVE_MOTOR) ),
-	right_motor(new Talon(Ports::Digital_Channels::RIGHT_DRIVE_MOTOR)) {
+	right_motor( new Talon(Ports::Digital_Channels::RIGHT_DRIVE_MOTOR) ) {
 }
 
 void Drive_Base::InitDefaultCommand() {
