@@ -7,6 +7,7 @@
 namespace Subsystems {
 	extern Drive_Base * drive_base;
 	extern Generic_Motor * generic_motor;
+	void initialize();
 }
 
 #endif // SUBSYSTEMS_HPP
