@@ -1,6 +1,6 @@
 #include "robot.hpp"
 #include <WPILib.h>
-#include "subsystems\subsystems.hpp"
+#include "subsystems/subsystems.hpp"
 
 void Robot::RobotInit() {
 	Subsystems::initialize();
