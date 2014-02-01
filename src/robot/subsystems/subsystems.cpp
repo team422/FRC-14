@@ -2,6 +2,8 @@
 
 Drive_Base * Subsystems::drive_base = 0;
 Generic_Motor * Subsystems::generic_motor = 0;
+Vision *Subsystems::vision = 0;
+Compressor_System *Subsystems::compressor_system = 0;
 
 // Ideally, these would be statically initialized above. However, WPILib has a
 // bug where networking code in the constructors of actuators and sensors causes
@@ -11,4 +13,6 @@ Generic_Motor * Subsystems::generic_motor = 0;
 void Subsystems::initialize() {
 	drive_base = new Drive_Base();
 	generic_motor = new Generic_Motor();
+	vision = new Vision();
+	compressor_system = new Compressor_System();
 }

@@ -13,7 +13,13 @@ namespace Ports {
 	namespace Digital_Channels {
 		const uint32_t LEFT_DRIVE_MOTOR  = 1,
 		               RIGHT_DRIVE_MOTOR = 2,
-		               GENERIC_MOTOR = 3;
+			           GENERIC_MOTOR = 3;
+	}
+	namespace Digital_IO {
+		const uint32_t PRESSURE_SWITCH = 1;
+	}
+	namespace Relays {
+		const uint32_t COMPRESSOR = 1;
 	}
 }
 
