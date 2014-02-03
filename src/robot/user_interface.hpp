@@ -6,13 +6,15 @@
 
 namespace UI {
 	namespace Primary_Driver {
-		extern Joystick *left_joystick;
-		extern Joystick *right_joystick;
+		extern Joystick *left_analog_stick;
+		extern Joystick *right_analog_stick;
 	}
 	
 	namespace Secondary_Driver{
 		extern Joystick *joystick;
 	}
+
+	void initialize();
 }
 
 #endif // USER_INTERFACE_HPP
