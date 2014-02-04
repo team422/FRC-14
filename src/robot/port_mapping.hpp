@@ -21,12 +21,6 @@ namespace Ports {
 	namespace Relays {
 		const uint32_t COMPRESSOR = 1;
 	}
-	namespace Digital_IO {
-		const uint32_t PRESSURE_SWITCH = 1;
-	}
-	namespace Relays {
-		const uint32_t COMPRESSOR = 1;
-	}
 	namespace Solenoids {
 		const uint32_t SHIFTER_HIGH_GEAR = 1,
 		      	       SHIFTER_LOW_GEAR = 2;
