@@ -8,6 +8,7 @@ namespace UI {
 	namespace Primary_Driver {
 		extern Joystick *left_analog_stick;
 		extern Joystick *right_analog_stick;
+		extern JoystickButton *shift_button;
 	}
 	
 	namespace Secondary_Driver{
