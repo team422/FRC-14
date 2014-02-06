@@ -19,7 +19,11 @@ namespace Ports {
 		const uint32_t PRESSURE_SWITCH = 1;
 	}
 	namespace Relays {
-		const uint32_t COMPRESSOR = 1;
+		const uint32_t COMPRESSOR = 1,
+		               RED_LIGHT = 2,
+					   GREEN_LIGHT = 3,
+					   BLUE_LIGHT = 4;
+
 	}
 }
 
