@@ -4,6 +4,7 @@ Drive_Base * Subsystems::drive_base = 0;
 Generic_Motor * Subsystems::generic_motor = 0;
 Vision *Subsystems::vision = 0;
 Compressor_System *Subsystems::compressor_system = 0;
+Catapult *Subsystems::Catapult = 0;
 
 // Ideally, these would be statically initialized above. However, WPILib has a
 // bug where networking code in the constructors of actuators and sensors causes

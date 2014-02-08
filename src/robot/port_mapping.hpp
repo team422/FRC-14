@@ -21,6 +21,12 @@ namespace Ports {
 	namespace Relays {
 		const uint32_t COMPRESSOR = 1;
 	}
+	namespace Solenoidz {
+		const uint32_t PULLER_FORWARD = 1;
+		const uint32_t PULLER_BACKWARD = 1;
+		const uint32_t LOCKER_FORWARD = 1;
+		const uint32_t LOCKER_BACKWARD = 1;
+		}
 }
 
 #endif // PORT_MAPPING_HPP
