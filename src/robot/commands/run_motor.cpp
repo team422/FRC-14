@@ -8,7 +8,7 @@ Run_Motor::Run_Motor() {
 }
 
 void Run_Motor::Execute() {
-	float speed = UI::Secondary_Driver::joystick->GetY();
+	float speed = UI::Secondary_Driver::controller->get_left_y();
 	Subsystems::generic_motor->set_motor_normalized(speed);
 }
 

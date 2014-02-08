@@ -5,7 +5,7 @@
 
 void Robot::RobotInit() {
 	Subsystems::initialize();
-	UI::Initialize();
+	UI::initialize();
 }
 
 void Robot::TeleopPeriodic() {
