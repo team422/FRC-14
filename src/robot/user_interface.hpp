@@ -5,6 +5,7 @@
 #include <WPILib.h>
 
 namespace UI {
+	void Initialize();
 	namespace Primary_Driver {
 		extern Joystick *left_analog_stick;
 		extern Joystick *right_analog_stick;
@@ -13,6 +14,9 @@ namespace UI {
 	
 	namespace Secondary_Driver{
 		extern Joystick *joystick;
+		extern Button *red_light_button;
+		extern Button *green_light_button;
+		extern Button *blue_light_button;
 	}
 
 	void initialize();

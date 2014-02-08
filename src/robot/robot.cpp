@@ -1,9 +1,11 @@
 #include "robot.hpp"
 #include "subsystems/subsystems.hpp"
+#include "user_interface.hpp"
 #include <WPILib.h>
 
 void Robot::RobotInit() {
 	Subsystems::initialize();
+	UI::Initialize();
 }
 
 void Robot::TeleopPeriodic() {

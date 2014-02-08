@@ -20,6 +20,10 @@ namespace Ports {
 	}
 	namespace Relays {
 		const uint32_t COMPRESSOR = 1;
+
+		const uint32_t RED_LIGHT = 2,
+					   GREEN_LIGHT = 3,
+					   BLUE_LIGHT = 4;
 	}
 	namespace Solenoids {
 		const uint32_t SHIFTER_HIGH_GEAR = 1,
