@@ -6,6 +6,7 @@
 #include "vision.hpp"
 #include "compressor_system.hpp"
 #include "lights_rgb.hpp"
+#include "Catapult.hpp"
 
 namespace Subsystems {
 	extern Drive_Base * drive_base;
