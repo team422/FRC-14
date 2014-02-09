@@ -7,12 +7,13 @@ class Catapult : public Subsystem {
 public:
 	Catapult();
 	void pull_down();
-	void lock_up();
-	void fling();
+	void release_puller();
+	void engage_lock();
+	void release_lock();
 
 private:
 	DoubleSolenoid *puller;
-	DoubleSolenoid *lock;
+	Relay *lock;
 };
 
 #endif // CATAPULT_HPP
