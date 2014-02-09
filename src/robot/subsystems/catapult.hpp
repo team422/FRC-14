@@ -6,9 +6,9 @@
 class Catapult : public Subsystem {
 public:
 	Catapult();
-	void PullDown(float kReverse);
-	void LockUp(float kForward);
-	void Fling(float kReverse, float kReverse);
+	void pull_down();
+	void lock_up();
+	void fling();
 
 private:
 	DoubleSolenoid *puller;

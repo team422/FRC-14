@@ -6,7 +6,7 @@
 #include "vision.hpp"
 #include "compressor_system.hpp"
 #include "lights_rgb.hpp"
-#include "Catapult.hpp"
+#include "catapult.hpp"
 
 namespace Subsystems {
 	extern Drive_Base * drive_base;
@@ -14,6 +14,7 @@ namespace Subsystems {
 	extern Vision *vision;
 	extern Compressor_System *compressor_system;
 	extern Lights_RGB *lights_rgb;
+	extern Catapult *catapult;
 	void initialize();
 }
 
