@@ -17,6 +17,9 @@ namespace Ports {
 	}
 	namespace Digital_IO {
 		const uint32_t PRESSURE_SWITCH = 1;
+
+		const uint32_t CATAPULT_TOP_SWITCH = UNKNOWN,
+		               CATAPULT_BOTTOM_SWITCH = UNKNOWN;
 	}
 	namespace Relays {
 		const uint32_t COMPRESSOR = 1;
