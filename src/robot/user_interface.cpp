@@ -1,6 +1,7 @@
 #include "user_interface.hpp"
 #include "commands/control_lights.hpp"
 #include "commands/toggle_shifter.hpp"
+#include "commands/reverse_drive.hpp"
 #include "subsystems/lights_rgb.hpp"
 #include <WPILib.h>
 
@@ -10,6 +11,8 @@ Xbox_Controller * UI::Secondary_Driver::controller = new Xbox_Controller(2);
 void UI::initialize() {
 	Primary_Driver::controller->
 		LEFT_BUMPER->WhenPressed( new Toggle_Shifter() );
+	Primary_Driver::controller->
+		Y->WhenPressed( new Reverse_Drive() );
 	Secondary_Driver::controller->
 		B->WhenPressed( new Control_Lights(Lights_RGB::Red) );
 	Secondary_Driver::controller->
