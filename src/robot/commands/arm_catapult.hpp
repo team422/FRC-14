@@ -9,7 +9,7 @@ public:
 	void Initialize();
 	void Execute() {};
 	bool IsFinished();
-	void End();
+	void End() {};
 	void Interrupted();
 };
 
