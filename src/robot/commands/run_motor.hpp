@@ -7,7 +7,7 @@ class Run_Motor : public Command {
 public:
 	Run_Motor();
 	void Initialize() {};
-	void Execute() ;
+	void Execute();
 	bool IsFinished();
 	void End() {};
 	void Interrupted() {};
