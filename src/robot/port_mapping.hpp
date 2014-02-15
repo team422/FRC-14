@@ -17,6 +17,9 @@ namespace Ports {
 	}
 	namespace Digital_IO {
 		const uint32_t PRESSURE_SWITCH = 1;
+
+		const uint32_t CATAPULT_TOP_SWITCH = UNKNOWN,
+		               CATAPULT_BOTTOM_SWITCH = UNKNOWN;
 	}
 	namespace Relays {
 		const uint32_t COMPRESSOR = 1;
@@ -24,10 +27,15 @@ namespace Ports {
 		const uint32_t RED_LIGHT = 2,
 					   GREEN_LIGHT = 3,
 					   BLUE_LIGHT = 4;
+
+		const uint32_t CATAPULT_MAGNET = UNKNOWN;
 	}
 	namespace Solenoids {
 		const uint32_t SHIFTER_HIGH_GEAR = 1,
 		      	       SHIFTER_LOW_GEAR = 2;
+
+		const uint32_t PULLER_FORWARD = UNKNOWN,
+		               PULLER_BACKWARD = UNKNOWN;
 	}
 }
 

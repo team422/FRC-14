@@ -5,7 +5,7 @@ Generic_Motor * Subsystems::generic_motor = 0;
 Vision *Subsystems::vision = 0;
 Compressor_System *Subsystems::compressor_system = 0;
 Lights_RGB *Subsystems::lights_rgb = 0;
-Drive_Shifter *Subsystems::drive_shifter = 0; //Not implemented
+Catapult *Subsystems::catapult = 0;
 
 // Ideally, these would be statically initialized above. However, WPILib has a
 // bug where networking code in the constructors of actuators and sensors causes
@@ -18,5 +18,5 @@ void Subsystems::initialize() {
 	vision = new Vision();
 	compressor_system = new Compressor_System();
 	lights_rgb = new Lights_RGB();
-	drive_shifter = new Drive_Shifter(); //Not implemented
+	catapult = new Catapult();
 }
