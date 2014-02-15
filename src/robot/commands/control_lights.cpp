@@ -1,6 +1,7 @@
 #include "control_lights.hpp"
 #include "../user_interface.hpp"
 #include "../subsystems/subsystems.hpp"
+#include "../subsystems/lights_rgb.hpp"
 #include <WPILib.h>
 
 Control_Lights::Control_Lights(int whichcolor) {
