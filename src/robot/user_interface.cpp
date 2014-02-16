@@ -9,6 +9,7 @@
 #include "commands/raise_puller.hpp"
 #include "commands/control_lights.hpp"
 #include "subsystems/lights_rgb.hpp"
+#include "subsystems/subsystems.hpp"
 #include <WPILib.h>
 
 static const float PI = 3.14159265358979323846;
@@ -50,4 +51,6 @@ void UI::initialize() {
 	                           -PI/2, PI/6,
 	                           0.5, 1.1))->
 		WhenPressed( new Control_Lights(Lights_RGB::Blue) );
+	Secondary_Driver::controller->
+		RIGHT_JOYSTICK_PRESS->WhenPressed(new Control_Lights(Subsystems::lights_rgb->getAllianceColor()));
 }

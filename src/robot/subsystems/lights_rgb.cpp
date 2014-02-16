@@ -11,13 +11,18 @@ green_light(new Relay(Ports::Relays::GREEN_LIGHT,
 Relay::kForwardOnly)),
 blue_light(new Relay(Ports::Relays::BLUE_LIGHT,
 Relay::kForwardOnly)) {
-	
+	set_active_light(getAllianceColor());
 }
 
-
-void Lights_RGB::InitDefaultCommand() {
-	SetDefaultCommand(new Control_Lights(Lights_RGB::Green)); //Start Green
+int Lights_RGB::getAllianceColor() {
+	if (DriverStation::GetInstance()->GetAlliance()) { //False for red, true for blue
+		return Lights_RGB::lightColors::Blue;
+	}
+	else {
+		return Lights_RGB::lightColors::Red;
+	}
 }
+
 
 void Lights_RGB::set_active_light(int newLight) {
 	//Turn off all lights
