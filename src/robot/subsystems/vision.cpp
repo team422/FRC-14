@@ -6,6 +6,8 @@ Vision::Vision() :
 	Subsystem("Vision") {
 }
 
+// Get whether the goal is hot from network tables. The value is set by the
+// vision code on the driver station laptop.
 bool Vision::is_goal_hot() {
 	NetworkTable *vision_table = NetworkTable::GetTable("vision");
 	bool is_target_detected = false;

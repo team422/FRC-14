@@ -1,7 +1,7 @@
 #include "puller.hpp"
-#include <WPILib.h>
 #include "../port_mapping.hpp"
 #include "../commands/lower_puller.hpp"
+#include <WPILib.h>
 
 Puller::Puller() :
 Subsystem("Puller"),

@@ -9,6 +9,8 @@
 #include "catapult.hpp"
 #include "puller.hpp"
 
+// A copy of each subsystem on the robot, to be shared among the commands which
+// require them.
 namespace Subsystems {
 	extern Drive_Base * drive_base;
 	extern Collector * collector;

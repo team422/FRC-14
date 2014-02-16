@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 
+// Automatically raise the puller and release the catapult.
 class Fire : public CommandGroup {
 public:
 	Fire();

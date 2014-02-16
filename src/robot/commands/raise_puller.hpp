@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 
+// Raise up the puller for the catapult.
 class Raise_Puller : public Command {
 public:
 	Raise_Puller();

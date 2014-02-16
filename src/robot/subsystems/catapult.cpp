@@ -4,11 +4,12 @@
 #include "../commands/lock_catapult.hpp"
 
 Catapult::Catapult() :
-	Subsystem("Catapult"),
-	lock( new Relay(Ports::Relays::CATAPULT_MAGNET,
-	                Relay::kForwardOnly) ) {
+Subsystem("Catapult"),
+lock( new Relay(Ports::Relays::CATAPULT_MAGNET,
+                Relay::kForwardOnly) ) {
 }
 
+// Keep the electromagnet on by default
 void Catapult::InitDefaultCommand() {
 	SetDefaultCommand( new Lock_Catapult() );
 }

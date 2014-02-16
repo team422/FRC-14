@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 
+// Engage the electromagnet to lock the catapult arm back.
 class Lock_Catapult : public Command {
 public:
 	Lock_Catapult();

@@ -8,7 +8,6 @@
 #include "commands/pass.hpp"
 #include "commands/raise_puller.hpp"
 #include "commands/control_lights.hpp"
-#include "subsystems/lights_rgb.hpp"
 #include "subsystems/subsystems.hpp"
 #include <WPILib.h>
 
@@ -17,6 +16,7 @@ static const float PI = 3.14159265358979323846;
 Xbox_Controller * UI::Primary_Driver::controller = new Xbox_Controller(1);
 Xbox_Controller * UI::Secondary_Driver::controller = new Xbox_Controller(2);
 
+// Set up all the button bindings for the drivers
 void UI::initialize() {
 	Primary_Driver::controller->
 		LEFT_BUMPER->WhenPressed( new Toggle_Shifter() );
@@ -33,9 +33,14 @@ void UI::initialize() {
 		Y->WhenPressed( new Pass() );
 	Secondary_Driver::controller->
 		RIGHT_BUMPER->WhileHeld( new Raise_Puller() );
-	//	Secondary_Driver::controller->
-	//		RIGHT_JOYSTICK_PRESS->WhenPressed( new Toggle_Alliance_Green_Lights() );
-	
+
+	// Set to alliance color when pressing the right thumbstick
+	Secondary_Driver::controller->
+		RIGHT_JOYSTICK_PRESS->WhenPressed( new Control_Lights(
+			Subsystems::lights_rgb->getAllianceColor() ) );
+
+	// Divide the right thumbstick into thirds, each turning on a different
+	// light color.
 	(new Annular_Sector_Button(Secondary_Driver::controller,
 	                           false,
 	                           5*PI/6, -PI/2,
@@ -51,6 +56,4 @@ void UI::initialize() {
 	                           -PI/2, PI/6,
 	                           0.5, 1.1))->
 		WhenPressed( new Control_Lights(Lights_RGB::Blue) );
-	Secondary_Driver::controller->
-		RIGHT_JOYSTICK_PRESS->WhenPressed(new Control_Lights(Subsystems::lights_rgb->getAllianceColor()));
 }

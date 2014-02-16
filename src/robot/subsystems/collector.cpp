@@ -4,10 +4,10 @@
 #include <WPILib.h>
 
 Collector::Collector() :
-	Subsystem("Collector"),
-	intake( new Talon(Ports::Digital_Channels::INTAKE_MOTOR) ),
-	tilter( new DoubleSolenoid(Ports::Solenoids::COLLECTOR_UP,
-	                           Ports::Solenoids::COLLECTOR_DOWN) ),
+Subsystem("Collector"),
+intake( new Talon(Ports::Digital_Channels::INTAKE_MOTOR) ),
+tilter( new DoubleSolenoid(Ports::Solenoids::COLLECTOR_UP,
+                           Ports::Solenoids::COLLECTOR_DOWN) ),
 	down_switch( new DigitalInput(Ports::Digital_IO::COLLECTOR_SWITCH) ) {
 }
 

@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 
+// The drive motors and pistons which shift gears.
 class Drive_Base : public Subsystem {
 public:
 	Drive_Base();

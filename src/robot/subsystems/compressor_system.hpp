@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 
+// The compressor, as required by FRC rules.
 class Compressor_System : public Subsystem {
 public:
 	Compressor_System();

@@ -3,6 +3,8 @@
 
 #include <WPILib.h>
 
+// The collector system, including both the intake wheels and the tilting
+// pistons.
 class Collector : public Subsystem {
 public:
 	Collector();

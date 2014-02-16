@@ -5,8 +5,8 @@
 #include "xbox_controller.hpp"
 #include <WPILib.h>
 
+// Describes the user interface of the robot, things like joystick and buttons.
 namespace UI {
-	void Initialize();
 	namespace Primary_Driver {
 		extern Xbox_Controller *controller;
 	}

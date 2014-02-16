@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 
+// The interface with the vision code on the driver station laptop
 class Vision : public Subsystem {
 public:
 	Vision();

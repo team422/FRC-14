@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 
+// The control system for the LEDs.
 class Lights_RGB : public Subsystem {
 public:
 	Lights_RGB();

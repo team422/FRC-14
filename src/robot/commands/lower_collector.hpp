@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 
+// Tilt the collector forward so we can pick up balls.
 class Lower_Collector : public Command {
 public:
 	Lower_Collector();

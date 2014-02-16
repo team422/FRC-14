@@ -3,6 +3,8 @@
 
 #include <WPILib.h>
 
+// Run the left and right drive motors from the primary driver's left and right
+// thumbsticks.
 class Tank_Drive : public Command {
 public:
 	Tank_Drive();

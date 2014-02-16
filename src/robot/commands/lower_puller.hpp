@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 
+// Pull the catapult arm back.
 class Lower_Puller : public Command {
 public:
 	Lower_Puller();

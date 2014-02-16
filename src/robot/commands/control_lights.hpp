@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 
+// Pick which color the RGB LEDs on the robot are displaying.
 class Control_Lights : public Command {
 public:
 	Control_Lights(int lightcolor);

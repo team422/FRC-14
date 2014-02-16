@@ -3,6 +3,7 @@
 
 #include <WPILib.h>
 
+// The pistons which pull down the catapult arm.
 class Puller : public Subsystem {
 public:
 	Puller();
