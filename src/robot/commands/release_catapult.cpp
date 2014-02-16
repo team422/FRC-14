@@ -3,6 +3,7 @@
 
 Release_Catapult::Release_Catapult() {
 	Requires(Subsystems::catapult);
+	SetTimeout(0.5);
 }
 
 void Release_Catapult::Initialize() {
@@ -10,5 +11,5 @@ void Release_Catapult::Initialize() {
 }
 
 bool Release_Catapult::IsFinished() {
-	return true;
+	return IsTimedOut();
 }

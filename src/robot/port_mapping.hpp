@@ -18,8 +18,8 @@ namespace Ports {
 	namespace Digital_IO {
 		const uint32_t PRESSURE_SWITCH = 1;
 
-		const uint32_t CATAPULT_TOP_SWITCH = UNKNOWN,
-		               CATAPULT_BOTTOM_SWITCH = UNKNOWN;
+		const uint32_t PULLER_TOP_SWITCH = UNKNOWN,
+		               PULLER_BOTTOM_SWITCH = UNKNOWN;
 
 		const uint32_t COLLECTOR_SWITCH = UNKNOWN;
 	}

@@ -6,5 +6,4 @@
 Fire::Fire() {
 	AddSequential( new Raise_Puller() );
 	AddSequential( new Release_Catapult() );
-	AddSequential( new WaitCommand(0.5) );
 }

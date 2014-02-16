@@ -2,13 +2,13 @@
 #include "../subsystems/subsystems.hpp"
 
 Raise_Puller::Raise_Puller() {
-	Requires(Subsystems::catapult);
+	Requires(Subsystems::puller);
 }
 
 void Raise_Puller::Initialize() {
-	Subsystems::catapult->release_puller();
+	Subsystems::puller->raise();
 }
 
 bool Raise_Puller::IsFinished() {
-	return Subsystems::catapult->is_puller_up();
+	return Subsystems::puller->is_up();
 }

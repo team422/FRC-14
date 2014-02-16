@@ -6,6 +6,7 @@ Vision *Subsystems::vision = 0;
 Compressor_System *Subsystems::compressor_system = 0;
 Lights_RGB *Subsystems::lights_rgb = 0;
 Catapult *Subsystems::catapult = 0;
+Puller *Subsystems::puller = 0;
 
 // Ideally, these would be statically initialized above. However, WPILib has a
 // bug where networking code in the constructors of actuators and sensors causes
@@ -19,4 +20,5 @@ void Subsystems::initialize() {
 	compressor_system = new Compressor_System();
 	lights_rgb = new Lights_RGB();
 	catapult = new Catapult();
+	puller = new Puller();
 }

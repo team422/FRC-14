@@ -31,7 +31,7 @@ void UI::initialize() {
 	Secondary_Driver::controller->
 		Y->WhenPressed( new Pass() );
 	Secondary_Driver::controller->
-		RIGHT_BUMPER->WhenPressed( new Raise_Puller() );
+		RIGHT_BUMPER->WhileHeld( new Raise_Puller() );
 	//	Secondary_Driver::controller->
 	//		RIGHT_JOYSTICK_PRESS->WhenPressed( new Toggle_Alliance_Green_Lights() );
 	

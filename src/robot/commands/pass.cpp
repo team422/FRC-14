@@ -3,13 +3,14 @@
 
 Pass::Pass() {
 	Requires(Subsystems::catapult);
+	Requires(Subsystems::puller);
 }
 
 void Pass::Initialize() {
 	Subsystems::catapult->release_lock();
-	Subsystems::catapult->release_puller();
+	Subsystems::puller->raise();
 }
 
 bool Pass::IsFinished() {
-	return Subsystems::catapult->is_puller_up();
+	return Subsystems::puller->is_up();
 }
