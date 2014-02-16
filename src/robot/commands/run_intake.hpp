@@ -1,11 +1,11 @@
-#ifndef RUN_MOTOR_HPP
-#define RUN_MOTOR_HPP
+#ifndef RUN_INTAKE_HPP
+#define RUN_INTAKE_HPP
 
 #include <WPILib.h>
 
-class Run_Motor : public Command {
+class Run_Intake : public Command {
 public:
-	Run_Motor();
+	Run_Intake();
 	void Initialize() {};
 	void Execute();
 	bool IsFinished();
@@ -13,4 +13,4 @@ public:
 	void Interrupted() {};
 };
 
-#endif // RUN_MOTOR_HPP
+#endif // RUN_INTAKE_HPP

@@ -1,7 +1,7 @@
 #include "subsystems.hpp"
 
 Drive_Base * Subsystems::drive_base = 0;
-Generic_Motor * Subsystems::generic_motor = 0;
+Collector * Subsystems::collector = 0;
 Vision *Subsystems::vision = 0;
 Compressor_System *Subsystems::compressor_system = 0;
 Lights_RGB *Subsystems::lights_rgb = 0;
@@ -14,7 +14,7 @@ Catapult *Subsystems::catapult = 0;
 // See http://firstforge.wpi.edu/sf/go/artf1644
 void Subsystems::initialize() {
 	drive_base = new Drive_Base();
-	generic_motor = new Generic_Motor();
+	collector = new Collector();
 	vision = new Vision();
 	compressor_system = new Compressor_System();
 	lights_rgb = new Lights_RGB();
