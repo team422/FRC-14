@@ -7,7 +7,9 @@ Release_Catapult::Release_Catapult() {
 }
 
 void Release_Catapult::Initialize() {
-	Subsystems::catapult->release_lock();
+	if( Subsystems::collector->is_lowered() ) {
+		Subsystems::catapult->release_lock();
+	}
 }
 
 bool Release_Catapult::IsFinished() {
