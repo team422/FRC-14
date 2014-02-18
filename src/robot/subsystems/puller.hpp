@@ -14,7 +14,8 @@ public:
 	bool is_down();
 
 private:
-	DoubleSolenoid *puller;
+	DoubleSolenoid *puller_down,
+	               *puller_up;
 	DigitalInput *top_switch,
 	             *bottom_switch;
 };

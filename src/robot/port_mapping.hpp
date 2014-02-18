@@ -29,21 +29,21 @@ namespace Ports {
 	namespace Digital_IO {
 		const uint32_t PRESSURE_SWITCH = 1;
 
-		const uint32_t PULLER_TOP_SWITCH = UNKNOWN,
-		               PULLER_BOTTOM_SWITCH = UNKNOWN;
+		const uint32_t PULLER_TOP_SWITCH = 5, // UNKNOWN
+		               PULLER_BOTTOM_SWITCH = 6; // UNKNOWN
 
-		const uint32_t COLLECTOR_SWITCH = UNKNOWN;
+		const uint32_t COLLECTOR_SWITCH = 2;
 	}
 
 	// Relay ports on the digital sidecar, which usually go to spikes.
 	namespace Relays {
-		const uint32_t COMPRESSOR = 1;
+		const uint32_t COMPRESSOR = 6;
 
-		const uint32_t RED_LIGHT = 2,
-					   GREEN_LIGHT = 3,
-					   BLUE_LIGHT = 4;
+		const uint32_t RED_LIGHT = 3,
+					   GREEN_LIGHT = 4,
+					   BLUE_LIGHT = 5;
 
-		const uint32_t CATAPULT_MAGNET = UNKNOWN;
+		const uint32_t CATAPULT_MAGNET = 1;
 	}
 
 	// Ports on the solenoid module for controlling pneumatics.
@@ -51,11 +51,13 @@ namespace Ports {
 		const uint32_t SHIFTER_HIGH_GEAR = 1,
 		      	       SHIFTER_LOW_GEAR = 2;
 
-		const uint32_t PULLER_FORWARD = UNKNOWN,
-		               PULLER_BACKWARD = UNKNOWN;
+		const uint32_t PULLER_DOWN_FORWARD = 8,
+		               PULLER_DOWN_BACKWARD = 7,
+		               PULLER_UP_FORWARD = 6,
+		               PULLER_UP_BACKWARD = 5;
 
-		const uint32_t COLLECTOR_UP = UNKNOWN,
-		               COLLECTOR_DOWN = UNKNOWN;
+		const uint32_t COLLECTOR_UP = 3,
+		               COLLECTOR_DOWN = 4;
 	}
 }
 

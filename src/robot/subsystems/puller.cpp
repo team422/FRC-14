@@ -5,8 +5,10 @@
 
 Puller::Puller() :
 Subsystem("Puller"),
-puller( new DoubleSolenoid(Ports::Solenoids::PULLER_FORWARD,
-                           Ports::Solenoids::PULLER_BACKWARD) ),
+puller_down( new DoubleSolenoid(Ports::Solenoids::PULLER_DOWN_FORWARD,
+                                Ports::Solenoids::PULLER_DOWN_BACKWARD) ),
+puller_up( new DoubleSolenoid(Ports::Solenoids::PULLER_UP_FORWARD,
+                              Ports::Solenoids::PULLER_UP_BACKWARD) ),
 top_switch( new DigitalInput(Ports::Digital_IO::PULLER_TOP_SWITCH) ),
 bottom_switch( new DigitalInput(Ports::Digital_IO::PULLER_BOTTOM_SWITCH) ) {
 }
@@ -16,11 +18,13 @@ void Puller::InitDefaultCommand() {
 }
 
 void Puller::lower() {
-	puller->Set(DoubleSolenoid::kReverse);
+	puller_down->Set(DoubleSolenoid::kForward);
+	puller_up->Set(DoubleSolenoid::kReverse);
 }
 
 void Puller::raise() {
-	puller->Set(DoubleSolenoid::kForward);
+	puller_down->Set(DoubleSolenoid::kReverse);
+	puller_up->Set(DoubleSolenoid::kForward);
 }
 
 bool Puller::is_down() {
