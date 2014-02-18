@@ -9,7 +9,7 @@
 class Catapult : public Subsystem {
 public:
 	Catapult();
-	void InitDefaultCommand();
+	bool is_lock_engaged();
 	void engage_lock();
 	void release_lock();
 	bool is_safety_enabled();

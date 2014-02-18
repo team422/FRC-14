@@ -1,7 +1,6 @@
 #include "catapult.hpp"
 #include <WPILib.h>
 #include "../port_mapping.hpp"
-#include "../commands/lock_catapult.hpp"
 
 Catapult::Catapult() :
 Subsystem("Catapult"),
@@ -10,9 +9,8 @@ lock( new Relay(Ports::Relays::CATAPULT_MAGNET,
 safety_enabled(true) {
 }
 
-// Keep the electromagnet on by default
-void Catapult::InitDefaultCommand() {
-	SetDefaultCommand( new Lock_Catapult() );
+bool Catapult::is_lock_engaged() {
+	return lock->Get() == Relay::kOn;
 }
 
 void Catapult::engage_lock() {

@@ -3,9 +3,8 @@
 #include "commands/toggle_shifter.hpp"
 #include "commands/reverse_drive.hpp"
 #include "commands/toggle_collector.hpp"
-#include "commands/release_catapult.hpp"
+#include "commands/toggle_catapult_lock.hpp"
 #include "commands/fire.hpp"
-#include "commands/pass.hpp"
 #include "commands/raise_puller.hpp"
 #include "commands/control_underglow.hpp"
 #include "commands/match_alliance_underglow.hpp"
@@ -28,11 +27,11 @@ void UI::initialize() {
 		RIGHT_BUMPER->WhenPressed( new Toggle_Collector() );
 	
 	Secondary_Driver::controller->
-		A->WhenPressed( new Release_Catapult() );
+		A->WhenPressed( new Toggle_Catapult_Lock() );
 	Secondary_Driver::controller->
 		X->WhenPressed( new Fire() );
 	Secondary_Driver::controller->
-		Y->WhenPressed( new Pass() );
+		Y->WhenPressed( new Raise_Puller() );
 	Secondary_Driver::controller->
 		RIGHT_BUMPER->WhileHeld( new Raise_Puller() );
 	Secondary_Driver::controller->

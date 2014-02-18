@@ -1,11 +1,29 @@
 #include "fire.hpp"
-#include "raise_puller.hpp"
-#include "keep_puller_raised.hpp"
-#include "release_catapult.hpp"
-#include <WPILib.h>
+#include "../subsystems/subsystems.hpp"
 
-Fire::Fire() {
-	AddSequential( new Raise_Puller() );
-	AddParallel( new Keep_Puller_Raised( 0.75 ) );
-	AddParallel( new Release_Catapult() );
+Fire::Fire() :
+can_fire(true) {
+	Requires(Subsystems::catapult);
+	Requires(Subsystems::puller);
+	Requires(Subsystems::collector);
+	SetTimeout(10);
+	SetInterruptible(false);
+}
+
+void Fire::Initialize() {
+	can_fire = !Subsystems::catapult->is_safety_enabled()
+		|| Subsystems::collector->is_lowered();
+
+	if(can_fire) {
+		Subsystems::catapult->engage_lock();
+		Subsystems::puller->raise();
+	}
+}
+
+bool Fire::IsFinished() {
+	return !can_fire || IsTimedOut();
+}
+
+void Fire::End() {
+	Subsystems::catapult->release_lock();
 }
