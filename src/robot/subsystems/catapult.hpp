@@ -12,9 +12,13 @@ public:
 	void InitDefaultCommand();
 	void engage_lock();
 	void release_lock();
+	bool is_safety_enabled();
+	void enable_safety();
+	void disable_safety();
 
 private:
 	Relay *lock;
+	bool safety_enabled;
 };
 
 #endif // CATAPULT_HPP

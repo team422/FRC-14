@@ -3,11 +3,12 @@
 
 Release_Catapult::Release_Catapult() {
 	Requires(Subsystems::catapult);
-	SetTimeout(0.5);
+	SetTimeout(10);
 }
 
 void Release_Catapult::Initialize() {
-	if( Subsystems::collector->is_lowered() ) {
+	if( !Subsystems::catapult->is_safety_enabled()
+	    || Subsystems::collector->is_lowered() ) {
 		Subsystems::catapult->release_lock();
 	}
 }

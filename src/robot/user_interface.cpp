@@ -9,6 +9,7 @@
 #include "commands/raise_puller.hpp"
 #include "commands/control_underglow.hpp"
 #include "commands/match_alliance_underglow.hpp"
+#include "commands/override_safety.hpp"
 #include "subsystems/subsystems.hpp"
 #include <WPILib.h>
 
@@ -34,6 +35,8 @@ void UI::initialize() {
 		Y->WhenPressed( new Pass() );
 	Secondary_Driver::controller->
 		RIGHT_BUMPER->WhileHeld( new Raise_Puller() );
+	Secondary_Driver::controller->
+		LEFT_BUMPER->WhileHeld( new Override_Safety() );
 
 	// Set to alliance color when pressing the right thumbstick
 	Secondary_Driver::controller->
