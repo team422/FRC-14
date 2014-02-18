@@ -4,7 +4,7 @@ Drive_Base * Subsystems::drive_base = 0;
 Collector * Subsystems::collector = 0;
 Vision *Subsystems::vision = 0;
 Compressor_System *Subsystems::compressor_system = 0;
-Lights_RGB *Subsystems::lights_rgb = 0;
+Underglow *Subsystems::underglow = 0;
 Catapult *Subsystems::catapult = 0;
 Puller *Subsystems::puller = 0;
 
@@ -18,7 +18,7 @@ void Subsystems::initialize() {
 	collector = new Collector();
 	vision = new Vision();
 	compressor_system = new Compressor_System();
-	lights_rgb = new Lights_RGB();
+	underglow = new Underglow();
 	catapult = new Catapult();
 	puller = new Puller();
 }

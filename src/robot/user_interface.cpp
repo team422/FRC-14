@@ -7,7 +7,8 @@
 #include "commands/fire.hpp"
 #include "commands/pass.hpp"
 #include "commands/raise_puller.hpp"
-#include "commands/control_lights.hpp"
+#include "commands/control_underglow.hpp"
+#include "commands/match_alliance_underglow.hpp"
 #include "subsystems/subsystems.hpp"
 #include <WPILib.h>
 
@@ -36,8 +37,7 @@ void UI::initialize() {
 
 	// Set to alliance color when pressing the right thumbstick
 	Secondary_Driver::controller->
-		RIGHT_JOYSTICK_PRESS->WhenPressed( new Control_Lights(
-			Subsystems::lights_rgb->getAllianceColor() ) );
+		RIGHT_JOYSTICK_PRESS->WhenPressed( new Match_Alliance_Underglow() );
 
 	// Divide the right thumbstick into thirds, each turning on a different
 	// light color.
@@ -45,15 +45,15 @@ void UI::initialize() {
 	                           false,
 	                           5*PI/6, -PI/2,
 	                           0.5, 1.1))->
-		WhenPressed( new Control_Lights(Lights_RGB::Red) );
+		WhenPressed( new Control_Underglow(Underglow::Red) );
 	(new Annular_Sector_Button(Secondary_Driver::controller,
 	                           false,
 	                           PI/6, 5*PI/6,
 	                           0.5, 1.1))->
-		WhenPressed( new Control_Lights(Lights_RGB::Green) );
+		WhenPressed( new Control_Underglow(Underglow::Green) );
 	(new Annular_Sector_Button(Secondary_Driver::controller,
 	                           false,
 	                           -PI/2, PI/6,
 	                           0.5, 1.1))->
-		WhenPressed( new Control_Lights(Lights_RGB::Blue) );
+		WhenPressed( new Control_Underglow(Underglow::Blue) );
 }
