@@ -29,8 +29,8 @@ namespace Ports {
 	namespace Digital_IO {
 		const uint32_t PRESSURE_SWITCH = 1;
 
-		const uint32_t PULLER_TOP_SWITCH = 5, // UNKNOWN
-		               PULLER_BOTTOM_SWITCH = 6; // UNKNOWN
+		const uint32_t PULLER_TOP_SWITCH = 13,
+		               PULLER_BOTTOM_SWITCH = 12;
 
 		const uint32_t COLLECTOR_SWITCH = 2;
 	}
@@ -44,6 +44,8 @@ namespace Ports {
 					   BLUE_LIGHT = 5;
 
 		const uint32_t CATAPULT_MAGNET = 1;
+
+		const uint32_t CAMERA_LIGHT = 7;
 	}
 
 	// Ports on the solenoid module for controlling pneumatics.
