@@ -1,0 +1,14 @@
+# C++
+*.hpp text
+*.cpp text
+
+# Documentation
+*.md text
+*.txt text
+
+# Git
+/.gitignore text
+
+# LabVIEW
+*.lvproj binary
+*.vi binary
