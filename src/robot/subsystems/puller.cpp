@@ -34,3 +34,9 @@ bool Puller::is_down() {
 bool Puller::is_up() {
 	return top_switch->Get();
 }
+
+void Puller::update_dashboard() {
+	NetworkTable *dashboard_table = NetworkTable::GetTable("dashboard");
+	dashboard_table->PutBoolean( "is_puller_down", is_down() );
+	dashboard_table->PutBoolean( "is_puller_up", is_up() );
+}

@@ -12,6 +12,7 @@ public:
 	void raise();
 	bool is_up();
 	bool is_down();
+	void update_dashboard();
 
 private:
 	DoubleSolenoid *puller_down,

@@ -1,5 +1,6 @@
 #include "catapult.hpp"
 #include <WPILib.h>
+#include <WPILib/networktables/NetworkTable.h>
 #include "../port_mapping.hpp"
 
 Catapult::Catapult() :
@@ -15,10 +16,14 @@ bool Catapult::is_lock_engaged() {
 
 void Catapult::engage_lock() {
 	lock->Set(Relay::kOn);
+	NetworkTable *dashboard_table = NetworkTable::GetTable("dashboard");
+	dashboard_table->PutBoolean("is_electromagnet_engaged", true);
 }
 	
 void Catapult::release_lock() {
-	lock->Set(Relay::kOff);	
+	lock->Set(Relay::kOff);
+	NetworkTable *dashboard_table = NetworkTable::GetTable("dashboard");
+	dashboard_table->PutBoolean("is_electromagnet_engaged", false);
 }
 
 bool Catapult::is_safety_enabled() {

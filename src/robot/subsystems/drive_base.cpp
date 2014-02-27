@@ -2,6 +2,7 @@
 #include "../commands/tank_drive.hpp"
 #include "../port_mapping.hpp"
 #include <WPILib.h>
+#include <WPILib/networktables/NetworkTable.h>
 
 Drive_Base::Drive_Base() :
 Subsystem("Drive_Base"),
@@ -49,4 +50,7 @@ void Drive_Base::toggle_gear() {
 
 void Drive_Base::reverse_drive() {
 	is_drive_reversed = !is_drive_reversed;
+	
+	NetworkTable *dashboard_table = NetworkTable::GetTable("dashboard");
+	dashboard_table->PutBoolean("is_drive_reversed", is_drive_reversed);
 }
