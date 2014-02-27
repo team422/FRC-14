@@ -8,9 +8,9 @@ class Fire : public Command {
 public:
 	Fire();
 	void Initialize();
-	void Execute() {};
+	void Execute();
 	bool IsFinished();
-	void End();
+	void End() {};
 	void Interrupted() {};
 private:
 	bool can_fire;

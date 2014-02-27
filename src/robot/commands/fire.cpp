@@ -6,7 +6,7 @@ can_fire(true) {
 	Requires(Subsystems::catapult);
 	Requires(Subsystems::puller);
 	Requires(Subsystems::collector);
-	SetTimeout(10);
+	SetTimeout(5);
 	SetInterruptible(false);
 }
 
@@ -20,10 +20,12 @@ void Fire::Initialize() {
 	}
 }
 
-bool Fire::IsFinished() {
-	return !can_fire || IsTimedOut();
+void Fire::Execute() {
+	if( can_fire && Subsystems::puller->is_up() ) {
+		Subsystems::catapult->release_lock();
+	}
 }
 
-void Fire::End() {
-	Subsystems::catapult->release_lock();
+bool Fire::IsFinished() {
+	return !can_fire || IsTimedOut();
 }
