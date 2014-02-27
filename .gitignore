@@ -22,3 +22,7 @@
 *.vcxproj
 *.filters
 *.opensdf
+
+# LabVIEW files
+*.aliases
+*.lvlps
