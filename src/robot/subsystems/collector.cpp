@@ -28,7 +28,7 @@ void Collector::lower() {
 }
 
 bool Collector::is_lowered() {
-	return down_switch->Get();
+	return !down_switch->Get();
 }
 
 void Collector::toggle_position() {
@@ -38,4 +38,9 @@ void Collector::toggle_position() {
 	else {
 		lower();
 	}
+}
+
+void Collector::update_dashboard() {
+	NetworkTable *dashboard_table = NetworkTable::GetTable("dashboard");
+	dashboard_table->PutBoolean("is_collector_lowered", is_lowered() );
 }

@@ -14,6 +14,7 @@ public:
 	void lower();
 	void toggle_position();
 	bool is_lowered();
+	void update_dashboard();
 
 private:
 	Talon *intake;
