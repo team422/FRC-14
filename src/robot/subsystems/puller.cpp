@@ -28,11 +28,11 @@ void Puller::raise() {
 }
 
 bool Puller::is_down() {
-	return bottom_switch->Get();
+	return !bottom_switch->Get();
 }
 
 bool Puller::is_up() {
-	return top_switch->Get();
+	return !top_switch->Get();
 }
 
 void Puller::update_dashboard() {
