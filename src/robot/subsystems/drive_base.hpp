@@ -18,6 +18,7 @@ private:
 	Talon *left_motor, *right_motor;
 	DoubleSolenoid *shifter;
 	bool is_drive_reversed;
+	AnalogChannel *potentiometer;
 };
 
 #endif // DRIVE_BASE_HPP

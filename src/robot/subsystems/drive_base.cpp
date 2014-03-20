@@ -10,6 +10,7 @@ left_motor( new Talon(Ports::Digital_Channels::LEFT_DRIVE_MOTOR) ),
 right_motor( new Talon(Ports::Digital_Channels::RIGHT_DRIVE_MOTOR) ),
 shifter( new DoubleSolenoid(Ports::Solenoids::SHIFTER_HIGH_GEAR,
                             Ports::Solenoids::SHIFTER_LOW_GEAR) ),
+potentiometer( new AnalogChannel(Ports::Analog_Channels::DRIVE_BIAS) ),
 is_drive_reversed(false) {
 	shifter->Set(DoubleSolenoid::kForward);
 }
@@ -19,14 +20,20 @@ void Drive_Base::InitDefaultCommand() {
 }
 
 void Drive_Base::set_motors_normalized(float left_speed, float right_speed) {
-
+	float bias = potentiometer->GetAverageVoltage();
+	bias -= 2.5;
+	bias /= 2.5;
+	bias *= .25;
+	bias += 1;
+	
+	
 	// Flip which direction is the "front" when the drive is reversed.
 	if(is_drive_reversed) {
-		left_motor->Set(-right_speed);
+		left_motor->Set(-right_speed * bias);
 		right_motor->Set(-left_speed);
 	}
 	else {
-		left_motor->Set(left_speed);
+		left_motor->Set(left_speed * bias);
 		right_motor->Set(right_speed);
 	}
 }
