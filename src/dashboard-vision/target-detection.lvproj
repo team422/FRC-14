@@ -133,7 +133,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">/C/Users/William/src/frc-14/bin/dashboard-vision</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{7FFBEB7E-3D2D-48B2-A890-5C35A4E7F4E5}</Property>
-				<Property Name="Bld_version.build" Type="Int">10</Property>
+				<Property Name="Bld_version.build" Type="Int">11</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">target-detection.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">/C/Users/William/src/frc-14/bin/dashboard-vision/NI_AB_PROJECTNAME.exe</Property>
@@ -144,19 +144,21 @@
 				<Property Name="Destination[1].path" Type="Path">/C/Users/William/src/frc-14/bin/dashboard-vision/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">&lt;none&gt;</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{1E299F3C-C5EC-4E2B-9FDB-785840A72792}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{F099E918-B784-4404-ACC4-C6D39D2A30D5}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/target-detection.vi</Property>
 				<Property Name="Source[1].properties[0].type" Type="Str">Run when opened</Property>
 				<Property Name="Source[1].properties[0].value" Type="Bool">true</Property>
-				<Property Name="Source[1].properties[1].type" Type="Str">Window behavior</Property>
-				<Property Name="Source[1].properties[1].value" Type="Str">Floating</Property>
-				<Property Name="Source[1].properties[2].type" Type="Str">Window run-time position</Property>
-				<Property Name="Source[1].properties[2].value" Type="Str">Centered</Property>
-				<Property Name="Source[1].properties[3].type" Type="Str">Allow user to close window</Property>
+				<Property Name="Source[1].properties[1].type" Type="Str">Window run-time position</Property>
+				<Property Name="Source[1].properties[1].value" Type="Str">Centered</Property>
+				<Property Name="Source[1].properties[2].type" Type="Str">Allow user to close window</Property>
+				<Property Name="Source[1].properties[2].value" Type="Bool">false</Property>
+				<Property Name="Source[1].properties[3].type" Type="Str">Show toolbar</Property>
 				<Property Name="Source[1].properties[3].value" Type="Bool">false</Property>
-				<Property Name="Source[1].propertiesCount" Type="Int">4</Property>
+				<Property Name="Source[1].properties[4].type" Type="Str">Window behavior</Property>
+				<Property Name="Source[1].properties[4].value" Type="Str">Floating</Property>
+				<Property Name="Source[1].propertiesCount" Type="Int">5</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">2</Property>
