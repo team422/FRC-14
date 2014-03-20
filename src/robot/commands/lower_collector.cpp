@@ -2,14 +2,14 @@
 #include "../subsystems/subsystems.hpp"
 
 Lower_Collector::Lower_Collector() {
-	Requires(Subsystems::collector);
+	Requires(Subsystems::tilter);
 }
 
 void Lower_Collector::Initialize() {
-	Subsystems::collector->lower();
+	Subsystems::tilter->lower();
 }
 
 // Make sure the collector is finished tilting forward before we finish
 bool Lower_Collector::IsFinished() {
-	return Subsystems::collector->is_lowered();
+	return Subsystems::tilter->is_lowered();
 }

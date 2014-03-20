@@ -8,7 +8,7 @@ Toggle_Catapult_Lock::Toggle_Catapult_Lock() {
 void Toggle_Catapult_Lock::Initialize() {
 	if( Subsystems::catapult->is_lock_engaged() ) {
 		if( !Subsystems::catapult->is_safety_enabled()
-		    || Subsystems::collector->is_lowered() ) {
+		    || Subsystems::tilter->is_lowered() ) {
 			Subsystems::catapult->release_lock();
 		}
 	}

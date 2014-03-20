@@ -4,11 +4,11 @@
 #include <WPILib.h>
 
 Run_In_Intake::Run_In_Intake() {
-	Requires(Subsystems::collector);
+	Requires(Subsystems::intake);
 }
 
 void Run_In_Intake::Execute() {
-	Subsystems::collector->set_intake_normalized(-1.0);
+	Subsystems::intake->set_normalized(-1.0);
 }
 
 bool Run_In_Intake::IsFinished() {
@@ -16,9 +16,9 @@ bool Run_In_Intake::IsFinished() {
 }
 
 void Run_In_Intake::Interrupted() {
-	Subsystems::collector->set_intake_normalized(0.0);
+	Subsystems::intake->set_normalized(0.0);
 }
 
 void Run_In_Intake::End() {
-	Subsystems::collector->set_intake_normalized(0.0);
+	Subsystems::intake->set_normalized(0.0);
 }

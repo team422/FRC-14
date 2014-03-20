@@ -1,7 +1,8 @@
 #include "subsystems.hpp"
 
 Drive_Base * Subsystems::drive_base = 0;
-Collector * Subsystems::collector = 0;
+Tilter * Subsystems::tilter = 0;
+Intake * Subsystems::intake = 0;
 Vision *Subsystems::vision = 0;
 Compressor_System *Subsystems::compressor_system = 0;
 Underglow *Subsystems::underglow = 0;
@@ -16,7 +17,8 @@ Camera_Light *Subsystems::camera_light = 0;
 // See http://firstforge.wpi.edu/sf/go/artf1644
 void Subsystems::initialize() {
 	drive_base = new Drive_Base();
-	collector = new Collector();
+	tilter = new Tilter();
+	intake = new Intake();
 	vision = new Vision();
 	compressor_system = new Compressor_System();
 	underglow = new Underglow();

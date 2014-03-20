@@ -5,14 +5,14 @@ Fire::Fire() :
 can_fire(true) {
 	Requires(Subsystems::catapult);
 	Requires(Subsystems::puller);
-	Requires(Subsystems::collector);
+	Requires(Subsystems::tilter);
 	SetTimeout(3);
 	SetInterruptible(false);
 }
 
 void Fire::Initialize() {
 	can_fire = !Subsystems::catapult->is_safety_enabled()
-		|| Subsystems::collector->is_lowered();
+		|| Subsystems::tilter->is_lowered();
 
 	if(can_fire) {
 		Subsystems::catapult->engage_lock();

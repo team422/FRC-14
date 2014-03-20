@@ -4,12 +4,12 @@
 #include <WPILib.h>
 
 Run_Intake::Run_Intake() {
-	Requires(Subsystems::collector);
+	Requires(Subsystems::intake);
 }
 
 void Run_Intake::Execute() {
 	float speed = UI::Secondary_Driver::controller->get_left_y();
-	Subsystems::collector->set_intake_normalized(speed);
+	Subsystems::intake->set_normalized(speed);
 }
 
 bool Run_Intake::IsFinished() {

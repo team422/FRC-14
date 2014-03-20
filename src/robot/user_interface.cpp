@@ -1,7 +1,7 @@
 #include "user_interface.hpp"
 #include "commands/toggle_shifter.hpp"
 #include "commands/reverse_drive.hpp"
-#include "commands/toggle_collector.hpp"
+#include "commands/lower_collector.hpp"
 #include "commands/toggle_catapult_lock.hpp"
 #include "commands/shoot.hpp"
 #include "commands/raise_puller.hpp"
@@ -20,7 +20,7 @@ void UI::initialize() {
 	Primary_Driver::controller->
 		Y->WhenPressed( new Reverse_Drive() );
 	Primary_Driver::controller->
-		RIGHT_BUMPER->WhenPressed( new Toggle_Collector() );
+		RIGHT_BUMPER->WhileHeld( new Lower_Collector() );
 	
 	Secondary_Driver::controller->
 		A->WhenPressed( new Toggle_Catapult_Lock() );
