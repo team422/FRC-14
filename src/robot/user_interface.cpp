@@ -3,7 +3,7 @@
 #include "commands/reverse_drive.hpp"
 #include "commands/toggle_collector.hpp"
 #include "commands/toggle_catapult_lock.hpp"
-#include "commands/fire.hpp"
+#include "commands/shoot.hpp"
 #include "commands/raise_puller.hpp"
 #include "commands/match_alliance_underglow.hpp"
 #include "commands/override_safety.hpp"
@@ -25,7 +25,7 @@ void UI::initialize() {
 	Secondary_Driver::controller->
 		A->WhenPressed( new Toggle_Catapult_Lock() );
 	Secondary_Driver::controller->
-		X->WhenPressed( new Fire() );
+		X->WhenPressed( new Shoot() );
 	Secondary_Driver::controller->
 		Y->WhenPressed( new Raise_Puller() );
 	Secondary_Driver::controller->

@@ -9,11 +9,20 @@ void Robot::RobotInit() {
 	// the subsystems being initialized.
 	Subsystems::initialize();
 	UI::initialize();
+	autonomous = new Autonomous();
+}
+
+void Robot::AutonomousInit() {
+	autonomous->Start();
+}
+
+void Robot::AutonomousPeriodic() {
+	Scheduler::GetInstance()->Run();
 }
 
 void Robot::TeleopPeriodic() {
 	Subsystems::puller->update_dashboard();
-
+	Subsystems::collector->update_dashboard();
 	// Allow the default commands and user interaction to control the robot.
 	Scheduler::GetInstance()->Run();
 }

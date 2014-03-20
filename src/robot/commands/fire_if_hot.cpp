@@ -1,8 +1,9 @@
-#include "fire.hpp"
+#include "fire_if_hot.hpp"
 #include "../subsystems/subsystems.hpp"
 
-Fire::Fire() :
-can_fire(true) {
+Fire_If_Hot::Fire_If_Hot() :
+can_fire(true),
+is_hot(false) {
 	Requires(Subsystems::catapult);
 	Requires(Subsystems::puller);
 	Requires(Subsystems::collector);
@@ -10,7 +11,12 @@ can_fire(true) {
 	SetInterruptible(false);
 }
 
-void Fire::Initialize() {
+void Fire_If_Hot::Initialize() {
+	is_hot = Subsystems::vision->is_goal_hot();
+	if( !is_hot ) {
+		return;
+	}
+	
 	can_fire = !Subsystems::catapult->is_safety_enabled()
 		|| Subsystems::collector->is_lowered();
 
@@ -20,12 +26,12 @@ void Fire::Initialize() {
 	}
 }
 
-void Fire::Execute() {
-	if( can_fire && Subsystems::puller->is_up() ) {
+void Fire_If_Hot::Execute() {
+	if( is_hot && can_fire && Subsystems::puller->is_up() ) {
 		Subsystems::catapult->release_lock();
 	}
 }
 
-bool Fire::IsFinished() {
-	return !can_fire || IsTimedOut();
+bool Fire_If_Hot::IsFinished() {
+	return !is_hot || !can_fire || IsTimedOut();
 }

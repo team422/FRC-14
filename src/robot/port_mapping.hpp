@@ -16,7 +16,11 @@
 // Constants specifying where all cables on the robot are plugged in.
 
 namespace Ports {
+	namespace Analog_Channels {
+		const uint32_t DRIVE_BIAS = 1;
+	}
 
+	
 	// Channels on the digital sidecar that generally go to motor controllers.
 	namespace Digital_Channels {
 		const uint32_t LEFT_DRIVE_MOTOR  = 1,
@@ -32,20 +36,20 @@ namespace Ports {
 		const uint32_t PULLER_TOP_SWITCH = 13,
 		               PULLER_BOTTOM_SWITCH = 12;
 
-		const uint32_t COLLECTOR_SWITCH = 2;
+		const uint32_t COLLECTOR_SWITCH = 5;
 	}
 
 	// Relay ports on the digital sidecar, which usually go to spikes.
 	namespace Relays {
 		const uint32_t COMPRESSOR = 6;
 
-		const uint32_t RED_LIGHT = 3,
-					   GREEN_LIGHT = 4,
-					   BLUE_LIGHT = 5;
+		const uint32_t RED_LIGHT = 0,
+					   GREEN_LIGHT = 0,
+					   BLUE_LIGHT = 0;
 
 		const uint32_t CATAPULT_MAGNET = 1;
 
-		const uint32_t CAMERA_LIGHT = 7;
+		const uint32_t CAMERA_LIGHT = 3;
 	}
 
 	// Ports on the solenoid module for controlling pneumatics.
@@ -58,8 +62,8 @@ namespace Ports {
 		               PULLER_UP_FORWARD = 6,
 		               PULLER_UP_BACKWARD = 5;
 
-		const uint32_t COLLECTOR_UP = 3,
-		               COLLECTOR_DOWN = 4;
+		const uint32_t COLLECTOR_UP = 4,
+		               COLLECTOR_DOWN = 3;
 	}
 }
 
