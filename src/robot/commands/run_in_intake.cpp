@@ -8,7 +8,7 @@ Run_In_Intake::Run_In_Intake() {
 }
 
 void Run_In_Intake::Execute() {
-	Subsystems::intake->set_normalized(-1.0);
+	Subsystems::intake->set_normalized(1.0);
 }
 
 bool Run_In_Intake::IsFinished() {
