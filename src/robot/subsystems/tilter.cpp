@@ -37,5 +37,5 @@ void Tilter::toggle_position() {
 
 void Tilter::update_dashboard() {
 	NetworkTable *dashboard_table = NetworkTable::GetTable("dashboard");
-	dashboard_table->PutBoolean("is_tilter_lowered", is_lowered() );
+	dashboard_table->PutBoolean("is_collector_lowered", is_lowered() );
 }
