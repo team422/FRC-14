@@ -82,7 +82,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">/C/Users/William/src/frc-14/bin/NI_AB_PROJECTNAME</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{20FF0DC0-4862-4D13-9556-9466A78539DE}</Property>
-				<Property Name="Bld_version.build" Type="Int">1</Property>
+				<Property Name="Bld_version.build" Type="Int">2</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">dashboard.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">/C/Users/William/src/frc-14/bin/NI_AB_PROJECTNAME/dashboard.exe</Property>
