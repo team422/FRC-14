@@ -19,7 +19,6 @@ namespace Ports {
 	namespace Analog_Channels {
 		const uint32_t DRIVE_BIAS = 1;
 	}
-
 	
 	// Channels on the digital sidecar that generally go to motor controllers.
 	namespace Digital_Channels {
@@ -35,6 +34,11 @@ namespace Ports {
 
 		const uint32_t PULLER_TOP_SWITCH = 13,
 		               PULLER_BOTTOM_SWITCH = 12;
+
+		const uint32_t LEFT_ENCODER_A = 8,
+			           LEFT_ENCODER_B = 7,
+			           RIGHT_ENCODER_A = 10,
+			           RIGHT_ENCODER_B = 9;
 
 		const uint32_t COLLECTOR_SWITCH = 5;
 	}

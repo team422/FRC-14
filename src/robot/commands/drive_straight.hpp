@@ -3,15 +3,18 @@
 
 #include <WPILib.h>
 
-// Run the intake wheels from the secondary driver's left thumbstick.
+// Drive in a (sorta) straight line for `distance` inches.
 class Drive_Straight : public Command {
 public:
-	Drive_Straight(float timeout);
+	Drive_Straight(float distance);
 	void Initialize();
-	void Execute() {};
+	void Execute();
 	bool IsFinished();
 	void End();
 	void Interrupted();
+
+private:
+	float distance;
 };
 
 #endif // DRIVE_STRAIGHT_HPP
