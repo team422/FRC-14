@@ -8,7 +8,11 @@
 // Describes the user interface of the robot, things like joystick and buttons.
 namespace UI {
 	namespace Primary_Driver {
-		extern Xbox_Controller *controller;
+		extern Joystick *left_stick,
+		                *right_stick;
+		extern JoystickButton *toggle_shifter_button,
+		                      *reverse_drive_button,
+		                      *lower_collector_button;
 	}
 	
 	namespace Secondary_Driver{
