@@ -8,17 +8,17 @@ class Catapult : public Subsystem {
 public:
 	Catapult();
 	void InitDefaultCommand();
-	void lower();
-	void raise();
+	void engage_motor();
+	void pull_back();
+	void release();
+	void stop_motor();
 	bool is_down();
 	void update_dashboard();
-	void stop_motor();
-	void run_motor_reverse();
 
 private:
-	DoubleSolenoid *catapult_solenoid;
+	DoubleSolenoid *shifter;
 	DigitalInput *bottom_switch;
-	Talon *catapult_motor;
+	Talon *motor;
 };
 
 #endif // CATAPULT_HPP

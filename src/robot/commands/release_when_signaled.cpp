@@ -11,7 +11,7 @@ did_release(false) {
 void Release_When_Signaled::Execute() {
 	if( (UI::Primary_Driver::left_arm->GetY() < -0.5) &&
 	    (UI::Primary_Driver::right_arm->GetY() < -0.5) ) {
-		Subsystems::catapult->raise();
+		Subsystems::catapult->release();
 		did_release = true;
 	}
 }
@@ -22,6 +22,6 @@ bool Release_When_Signaled::IsFinished() {
 
 void Release_When_Signaled::End() {
 	if(!did_release) {
-		Subsystems::catapult->raise();
+		Subsystems::catapult->release();
 	}
 }

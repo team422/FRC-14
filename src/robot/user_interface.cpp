@@ -2,8 +2,8 @@
 #include "commands/toggle_shifter.hpp"
 #include "commands/reverse_drive.hpp"
 #include "commands/lower_collector.hpp"
-#include "commands/retract_piston.hpp"
-#include "commands/lower_catapult.hpp"
+#include "commands/fire.hpp"
+#include "commands/pull_back_catapult.hpp"
 #include <WPILib.h>
 
 Joystick *UI::Primary_Driver::left_stick = new Joystick(1);
@@ -31,7 +31,7 @@ void UI::initialize() {
 	{
 		using namespace Secondary_Driver;
 		
-		controller->RIGHT_BUMPER->WhileHeld( new Retract_Piston() );
-		controller->LEFT_BUMPER->WhileHeld( new Lower_Catapult() );
+		controller->RIGHT_BUMPER->WhenPressed( new Fire() );
+		controller->LEFT_BUMPER->WhenPressed( new Pull_Back_Catapult() );
 	}
 }

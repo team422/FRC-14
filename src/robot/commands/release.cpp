@@ -1,8 +1,14 @@
-#include "retract_piston.hpp"
 #include "release.hpp"
-#include <WPILib.h>
+#include "../subsystems/subsystems.hpp"
 
 Release::Release() {
-	AddSequential( new Retract_Piston() );
-	AddSequential( new WaitCommand(2) );
+	Requires(Subsystems::catapult);
+}
+
+void Release::Initialize() {
+	Subsystems::catapult->release();
+}
+
+bool Release::IsFinished() {
+	return true;
 }

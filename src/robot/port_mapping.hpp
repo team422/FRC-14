@@ -68,8 +68,8 @@ namespace Ports {
 		const uint32_t COLLECTOR_UP = 4,
 		               COLLECTOR_DOWN = 3;
 
-		const uint32_t CATAPULT_UP = UNKNOWN,
-		               CATAPULT_DOWN = UNKNOWN;
+		const uint32_t CATAPULT_MOTOR_ENGAGED = UNKNOWN,
+		               CATAPULT_MOTOR_DISENGAGED = UNKNOWN;
 	}
 }
 
