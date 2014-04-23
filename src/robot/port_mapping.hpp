@@ -26,6 +26,8 @@ namespace Ports {
 		               RIGHT_DRIVE_MOTOR = 2;
 
 		const uint32_t INTAKE_MOTOR = 3;
+
+		const uint32_t CATAPULT_MOTOR = 4;
 	}
 
 	// Digital IO ports on the digital sidecar, usually used for sensors.
@@ -41,6 +43,8 @@ namespace Ports {
 			           RIGHT_ENCODER_B = 9;
 
 		const uint32_t COLLECTOR_SWITCH = 5;
+		
+		const uint32_t CATAPULT_BOTTOM_SWITCH = UNKNOWN;
 	}
 
 	// Relay ports on the digital sidecar, which usually go to spikes.
@@ -61,13 +65,11 @@ namespace Ports {
 		const uint32_t SHIFTER_HIGH_GEAR = 1,
 		      	       SHIFTER_LOW_GEAR = 2;
 
-		const uint32_t PULLER_DOWN_FORWARD = 8,
-		               PULLER_DOWN_BACKWARD = 7,
-		               PULLER_UP_FORWARD = 6,
-		               PULLER_UP_BACKWARD = 5;
-
 		const uint32_t COLLECTOR_UP = 4,
 		               COLLECTOR_DOWN = 3;
+
+		const uint32_t CATAPULT_UP = UNKNOWN,
+		               CATAPULT_DOWN = UNKNOWN;
 	}
 }
 

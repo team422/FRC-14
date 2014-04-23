@@ -7,7 +7,6 @@ Vision *Subsystems::vision = 0;
 Compressor_System *Subsystems::compressor_system = 0;
 Underglow *Subsystems::underglow = 0;
 Catapult *Subsystems::catapult = 0;
-Puller *Subsystems::puller = 0;
 Camera_Light *Subsystems::camera_light = 0;
 
 // Ideally, these would be statically initialized above. However, WPILib has a
@@ -23,6 +22,5 @@ void Subsystems::initialize() {
 	compressor_system = new Compressor_System();
 	underglow = new Underglow();
 	catapult = new Catapult();
-	puller = new Puller();
 	camera_light = new Camera_Light();
 }

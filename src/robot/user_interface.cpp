@@ -2,12 +2,8 @@
 #include "commands/toggle_shifter.hpp"
 #include "commands/reverse_drive.hpp"
 #include "commands/lower_collector.hpp"
-#include "commands/toggle_catapult_lock.hpp"
-#include "commands/shoot.hpp"
-#include "commands/raise_puller.hpp"
-#include "commands/match_alliance_underglow.hpp"
-#include "commands/override_safety.hpp"
-#include "subsystems/subsystems.hpp"
+#include "commands/retract_piston.hpp"
+#include "commands/lower_catapult.hpp"
 #include <WPILib.h>
 
 Xbox_Controller * UI::Primary_Driver::controller = new Xbox_Controller(1);
@@ -23,17 +19,7 @@ void UI::initialize() {
 		RIGHT_BUMPER->WhileHeld( new Lower_Collector() );
 	
 	Secondary_Driver::controller->
-		A->WhenPressed( new Toggle_Catapult_Lock() );
+		RIGHT_BUMPER->WhileHeld( new Retract_Piston() );
 	Secondary_Driver::controller->
-		X->WhenPressed( new Shoot() );
-	Secondary_Driver::controller->
-		Y->WhenPressed( new Raise_Puller() );
-	Secondary_Driver::controller->
-		RIGHT_BUMPER->WhileHeld( new Raise_Puller() );
-	Secondary_Driver::controller->
-		LEFT_BUMPER->WhileHeld( new Override_Safety() );
-
-	// Set to alliance color when pressing the right thumbstick
-	Secondary_Driver::controller->
-		RIGHT_JOYSTICK_PRESS->WhenPressed( new Match_Alliance_Underglow() );
+		LEFT_BUMPER->WhileHeld( new Lower_Catapult() );
 }

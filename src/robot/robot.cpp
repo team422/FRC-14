@@ -21,7 +21,6 @@ void Robot::AutonomousPeriodic() {
 }
 
 void Robot::TeleopPeriodic() {
-	Subsystems::puller->update_dashboard();
 	Subsystems::tilter->update_dashboard();
 	// Allow the default commands and user interaction to control the robot.
 	Scheduler::GetInstance()->Run();

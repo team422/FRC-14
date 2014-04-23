@@ -3,22 +3,22 @@
 
 #include <WPILib.h>
 
-// The catapult arm on the robot. This subsystem only contains the
-// electromagnet, not the pistons which pull it back, so that those systems can
-// be operated independently.
+// The pistons which move the catapult
 class Catapult : public Subsystem {
 public:
 	Catapult();
-	bool is_lock_engaged();
-	void engage_lock();
-	void release_lock();
-	bool is_safety_enabled();
-	void enable_safety();
-	void disable_safety();
+	void InitDefaultCommand();
+	void lower();
+	void raise();
+	bool is_down();
+	void update_dashboard();
+	void stop_motor();
+	void run_motor_reverse();
 
 private:
-	Relay *lock;
-	bool safety_enabled;
+	DoubleSolenoid *catapult_solenoid;
+	DigitalInput *bottom_switch;
+	Talon *catapult_motor;
 };
 
 #endif // CATAPULT_HPP
