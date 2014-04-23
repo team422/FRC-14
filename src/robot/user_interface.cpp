@@ -9,7 +9,10 @@
 Joystick *UI::Primary_Driver::left_stick = new Joystick(1);
 Joystick *UI::Primary_Driver::right_stick = new Joystick(2);
 
-Xbox_Controller * UI::Secondary_Driver::controller = new Xbox_Controller(2);
+KinectStick *UI::Primary_Driver::left_arm = new KinectStick(1);
+KinectStick *UI::Primary_Driver::right_arm = new KinectStick(2);
+ 
+Xbox_Controller *UI::Secondary_Driver::controller = new Xbox_Controller(2);
 
 // Set up all the button bindings for the drivers
 void UI::initialize() {

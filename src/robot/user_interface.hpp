@@ -13,6 +13,8 @@ namespace UI {
 		extern JoystickButton *toggle_shifter_button,
 		                      *reverse_drive_button,
 		                      *lower_collector_button;
+		extern KinectStick *left_arm,
+		                   *right_arm;
 	}
 	
 	namespace Secondary_Driver{
