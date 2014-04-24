@@ -1,6 +1,6 @@
 #include "tilter.hpp"
 #include "../port_mapping.hpp"
-#include "../commands/raise_collector.hpp"
+#include "../commands/lower_collector.hpp"
 #include <WPILib.h>
 
 Tilter::Tilter() :
@@ -11,7 +11,7 @@ down_switch( new DigitalInput(Ports::Digital_IO::COLLECTOR_SWITCH) ) {
 }
 
 void Tilter::InitDefaultCommand() {
-	SetDefaultCommand( new Raise_Collector() );
+	SetDefaultCommand( new Lower_Collector() );
 }
 
 void Tilter::raise() {

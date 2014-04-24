@@ -1,7 +1,7 @@
 #include "user_interface.hpp"
 #include "commands/toggle_shifter.hpp"
 #include "commands/reverse_drive.hpp"
-#include "commands/lower_collector.hpp"
+#include "commands/toggle_collector.hpp"
 #include "commands/fire.hpp"
 #include "commands/pull_back_catapult.hpp"
 #include <WPILib.h>
@@ -19,13 +19,13 @@ void UI::initialize() {
 	{
 		using namespace Primary_Driver;
 		
-    	toggle_shifter_button = new JoystickButton(left_stick, 0);
-		reverse_drive_button = new JoystickButton(left_stick, 0);
-		lower_collector_button = new JoystickButton(left_stick, 0);
+    	toggle_shifter_button = new JoystickButton(left_stick, 1);
+		reverse_drive_button = new JoystickButton(right_stick, 2);
+		lower_collector_button = new JoystickButton(right_stick, 1);
 
 		toggle_shifter_button->WhenPressed( new Toggle_Shifter() );
 		reverse_drive_button->WhenPressed( new Reverse_Drive() );
-		lower_collector_button->WhileHeld( new Lower_Collector() );
+		lower_collector_button->WhenPressed( new Toggle_Collector() );
 	}
 
 	{
