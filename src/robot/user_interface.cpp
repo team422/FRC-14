@@ -12,26 +12,22 @@ Joystick *UI::Primary_Driver::right_stick = new Joystick(2);
 KinectStick *UI::Primary_Driver::left_arm = new KinectStick(1);
 KinectStick *UI::Primary_Driver::right_arm = new KinectStick(2);
 
-Xbox_Controller *UI::Secondary_Driver::controller = new Xbox_Controller(2);
+Xbox_Controller *UI::Secondary_Driver::controller = new Xbox_Controller(3);
 
+JoystickButton *UI::Primary_Driver::toggle_shifter_button = 0;
+JoystickButton *UI::Primary_Driver::reverse_drive_button = 0;
+JoystickButton *UI::Primary_Driver::lower_collector_button = 0;
+	
 // Set up all the button bindings for the drivers
-void UI::initialize() {
-	{
-		using namespace Primary_Driver;
-		
-    	toggle_shifter_button = new JoystickButton(left_stick, 1);
-		reverse_drive_button = new JoystickButton(right_stick, 2);
-		lower_collector_button = new JoystickButton(right_stick, 1);
+void UI::initialize() {	
+		Primary_Driver::toggle_shifter_button = new JoystickButton(Primary_Driver::left_stick, 1);
+		Primary_Driver::reverse_drive_button = new JoystickButton(Primary_Driver::right_stick, 2);
+		Primary_Driver::lower_collector_button = new JoystickButton(Primary_Driver::right_stick, 1);
 
-		toggle_shifter_button->WhenPressed( new Toggle_Shifter() );
-		reverse_drive_button->WhenPressed( new Reverse_Drive() );
-		lower_collector_button->WhenPressed( new Toggle_Collector() );
-	}
+		Primary_Driver::toggle_shifter_button->WhenPressed( new Toggle_Shifter() );
+		Primary_Driver::reverse_drive_button->WhenPressed( new Reverse_Drive() );
+		Primary_Driver::lower_collector_button->WhenPressed( new Toggle_Collector() );
 
-	{
-		using namespace Secondary_Driver;
-		
-		controller->RIGHT_BUMPER->WhenPressed( new Fire() );
-		controller->LEFT_BUMPER->WhenPressed( new Pull_Back_Catapult() );
-	}
+		Secondary_Driver::controller->RIGHT_BUMPER->WhenPressed( new Fire() );
+		Secondary_Driver::controller->LEFT_BUMPER->WhenPressed( new Pull_Back_Catapult() );
 }

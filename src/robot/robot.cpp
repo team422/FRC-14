@@ -16,6 +16,10 @@ void Robot::AutonomousInit() {
 	autonomous->Start();
 }
 
+void Robot::TeleopInit() {
+	autonomous->Cancel();
+}
+
 void Robot::AutonomousPeriodic() {
 	Scheduler::GetInstance()->Run();
 }

@@ -7,7 +7,6 @@
 class Tilter : public Subsystem {
 public:
 	Tilter();
-	void InitDefaultCommand();
 	void raise();
 	void lower();
 	void toggle_position();

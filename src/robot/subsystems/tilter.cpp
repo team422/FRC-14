@@ -10,10 +10,6 @@ tilter( new DoubleSolenoid(Ports::Solenoids::COLLECTOR_UP,
 down_switch( new DigitalInput(Ports::Digital_IO::COLLECTOR_SWITCH) ) {
 }
 
-void Tilter::InitDefaultCommand() {
-	SetDefaultCommand( new Lower_Collector() );
-}
-
 void Tilter::raise() {
 	tilter->Set(DoubleSolenoid::kForward);
 }

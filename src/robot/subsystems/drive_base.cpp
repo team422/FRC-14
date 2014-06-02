@@ -32,19 +32,14 @@ void Drive_Base::InitDefaultCommand() {
 }
 
 void Drive_Base::set_motors_normalized(float left_speed, float right_speed) {
-	float bias = potentiometer->GetAverageVoltage();
-	bias -= 2.5;
-	bias /= 2.5;
-	bias *= .25;
-	bias += 1;
 	
 	// Flip which direction is the "front" when the drive is reversed.
 	if(is_drive_reversed) {
-		left_motor->Set(constrain(-right_speed * bias));
+		left_motor->Set(constrain(-right_speed));
 		right_motor->Set(constrain(-left_speed));
 	}
 	else {
-		left_motor->Set(constrain(left_speed * bias));
+		left_motor->Set(constrain(left_speed));
 		right_motor->Set(constrain(right_speed));
 	}
 }
