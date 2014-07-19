@@ -48,9 +48,9 @@ namespace Ports {
 	namespace Relays {
 		const uint32_t COMPRESSOR = 6;
 
-		const uint32_t RED_LIGHT = 0,
-					   GREEN_LIGHT = 0,
-					   BLUE_LIGHT = 0;
+		const uint32_t RED_LIGHT = 4,
+					   GREEN_LIGHT = 5,
+					   BLUE_LIGHT = 7;
 
 		const uint32_t CAMERA_LIGHT = 3;
 	}
