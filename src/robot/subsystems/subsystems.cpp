@@ -8,6 +8,7 @@ Compressor_System *Subsystems::compressor_system = 0;
 Underglow *Subsystems::underglow = 0;
 Catapult *Subsystems::catapult = 0;
 Camera_Light *Subsystems::camera_light = 0;
+Pool_Noodle *Subsystems::pool_noodle = 0;
 
 // Ideally, these would be statically initialized above. However, WPILib has a
 // bug where networking code in the constructors of actuators and sensors causes
@@ -23,4 +24,5 @@ void Subsystems::initialize() {
 	underglow = new Underglow();
 	catapult = new Catapult();
 	camera_light = new Camera_Light();
+	pool_noodle = new Pool_Noodle();
 }

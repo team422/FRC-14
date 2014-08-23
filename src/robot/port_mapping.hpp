@@ -28,6 +28,8 @@ namespace Ports {
 		const uint32_t INTAKE_MOTOR = 3;
 
 		const uint32_t CATAPULT_MOTOR = 6;
+		
+		const uint32_t POOL_NOODLE_SERVO = 9;
 	}
 
 	// Digital IO ports on the digital sidecar, usually used for sensors.
@@ -39,7 +41,7 @@ namespace Ports {
 			           RIGHT_ENCODER_A = 10,
 			           RIGHT_ENCODER_B = 9;
 
-		const uint32_t COLLECTOR_SWITCH = 5;
+		const uint32_t COLLECTOR_SWITCH = 6;
 		
 		const uint32_t CATAPULT_BOTTOM_SWITCH = 2;
 	}

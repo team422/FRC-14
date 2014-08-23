@@ -9,6 +9,7 @@
 #include "underglow.hpp"
 #include "catapult.hpp"
 #include "camera_light.hpp"
+#include "pool_noodle.hpp"
 
 // A copy of each subsystem on the robot, to be shared among the commands which
 // require them.
@@ -21,6 +22,7 @@ namespace Subsystems {
 	extern Underglow *underglow;
 	extern Catapult *catapult;
 	extern Camera_Light *camera_light;
+	extern Pool_Noodle *pool_noodle;
 	void initialize();
 }
 
