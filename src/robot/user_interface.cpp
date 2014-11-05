@@ -4,7 +4,8 @@
 #include "commands/toggle_collector.hpp"
 #include "commands/fire.hpp"
 #include "commands/pull_back_catapult.hpp"
-#include "commands/set_noodle_foreward.hpp"
+#include "commands/set_noodle_forward.hpp"
+#include "commands/set_noodle_back.hpp"
 #include <WPILib.h>
 
 Joystick *UI::Primary_Driver::left_stick = new Joystick(1);
@@ -31,5 +32,6 @@ void UI::initialize() {
 
 		Secondary_Driver::controller->RIGHT_BUMPER->WhenPressed( new Fire() );
 		Secondary_Driver::controller->LEFT_BUMPER->WhenPressed( new Pull_Back_Catapult() );
-		Secondary_Driver::controller->X->WhenPressed( new Set_Noodle_Foreward() );
+		Secondary_Driver::controller->X->WhenPressed( new Set_Noodle_Forward() );
+		Secondary_Driver::controller->Y->WhenPressed( new Set_Noodle_Back() );
 }

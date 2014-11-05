@@ -7,9 +7,10 @@
 class Pool_Noodle : public Subsystem {
 public:
 	Pool_Noodle();
-	void InitDefaultCommand();
+	void Initialize();
 	void move_back();
-	void move_foreward();
+	void move_forward();
+	bool IsFinished();
 
 private:
 	Servo *articulator;	
