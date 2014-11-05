@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AD011B03-2DEF-4460-9D0F-6EC2A0C64D01}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <ProjectName>FRC-2014</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
+    <NMakeOutput>FRC_UserProgram.out</NMakeOutput>
+    <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>make deploy</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);C:\WindRiver\vxworks-6.3\target\lib;</LibraryPath>
+    <IncludePath>C:\WindRiver\vxworks-6.3\target\h;C:\WindRiver\vxworks-6.3\target\h\WPILib;C:\WindRiver\vxworks-6.3\target\h\wrn\coreip</IncludePath>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>make</NMakeBuildCommandLine>
+    <NMakeOutput>FRC_UserProgram.out</NMakeOutput>
+    <NMakeCleanCommandLine>make clean</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>make rebuild</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+    <Text Include="LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="CODING-CONVENTIONS.md" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\robot\annular_sector_button.hpp" />
+    <ClInclude Include="src\robot\commands\control_underglow.hpp" />
+    <ClInclude Include="src\robot\commands\fire.hpp" />
+    <ClInclude Include="src\robot\commands\keep_puller_raised.hpp" />
+    <ClInclude Include="src\robot\commands\lock_catapult.hpp" />
+    <ClInclude Include="src\robot\commands\lower_collector.hpp" />
+    <ClInclude Include="src\robot\commands\lower_puller.hpp" />
+    <ClInclude Include="src\robot\commands\match_alliance_underglow.hpp" />
+    <ClInclude Include="src\robot\commands\pass.hpp" />
+    <ClInclude Include="src\robot\commands\raise_puller.hpp" />
+    <ClInclude Include="src\robot\commands\release_catapult.hpp" />
+    <ClInclude Include="src\robot\commands\reverse_drive.hpp" />
+    <ClInclude Include="src\robot\commands\run_intake.hpp" />
+    <ClInclude Include="src\robot\commands\tank_drive.hpp" />
+    <ClInclude Include="src\robot\commands\toggle_collector.hpp" />
+    <ClInclude Include="src\robot\commands\toggle_shifter.hpp" />
+    <ClInclude Include="src\robot\port_mapping.hpp" />
+    <ClInclude Include="src\robot\robot.hpp" />
+    <ClInclude Include="src\robot\subsystems\catapult.hpp" />
+    <ClInclude Include="src\robot\subsystems\collector.hpp" />
+    <ClInclude Include="src\robot\subsystems\compressor_system.hpp" />
+    <ClInclude Include="src\robot\subsystems\drive_base.hpp" />
+    <ClInclude Include="src\robot\subsystems\puller.hpp" />
+    <ClInclude Include="src\robot\subsystems\subsystems.hpp" />
+    <ClInclude Include="src\robot\subsystems\underglow.hpp" />
+    <ClInclude Include="src\robot\subsystems\vision.hpp" />
+    <ClInclude Include="src\robot\user_interface.hpp" />
+    <ClInclude Include="src\robot\xbox_controller.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\robot\annular_sector_button.cpp" />
+    <ClCompile Include="src\robot\commands\control_underglow.cpp" />
+    <ClCompile Include="src\robot\commands\fire.cpp" />
+    <ClCompile Include="src\robot\commands\keep_puller_raised.cpp" />
+    <ClCompile Include="src\robot\commands\lock_catapult.cpp" />
+    <ClCompile Include="src\robot\commands\lower_collector.cpp" />
+    <ClCompile Include="src\robot\commands\lower_puller.cpp" />
+    <ClCompile Include="src\robot\commands\match_alliance_underglow.cpp" />
+    <ClCompile Include="src\robot\commands\pass.cpp" />
+    <ClCompile Include="src\robot\commands\raise_puller.cpp" />
+    <ClCompile Include="src\robot\commands\release_catapult.cpp" />
+    <ClCompile Include="src\robot\commands\reverse_drive.cpp" />
+    <ClCompile Include="src\robot\commands\run_intake.cpp" />
+    <ClCompile Include="src\robot\commands\tank_drive.cpp" />
+    <ClCompile Include="src\robot\commands\toggle_collector.cpp" />
+    <ClCompile Include="src\robot\commands\toggle_shifter.cpp" />
+    <ClCompile Include="src\robot\robot.cpp" />
+    <ClCompile Include="src\robot\subsystems\catapult.cpp" />
+    <ClCompile Include="src\robot\subsystems\collector.cpp" />
+    <ClCompile Include="src\robot\subsystems\compressor_system.cpp" />
+    <ClCompile Include="src\robot\subsystems\drive_base.cpp" />
+    <ClCompile Include="src\robot\subsystems\puller.cpp" />
+    <ClCompile Include="src\robot\subsystems\subsystems.cpp" />
+    <ClCompile Include="src\robot\subsystems\underglow.cpp" />
+    <ClCompile Include="src\robot\subsystems\vision.cpp" />
+    <ClCompile Include="src\robot\user_interface.cpp" />
+    <ClCompile Include="src\robot\xbox_controller.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
